@@ -1,7 +1,7 @@
 provider "kubernetes" {
   host     = "${google_container_cluster.default.endpoint}"
-  username = "${var.master_username}"
-  password = "${var.master_password}"
+  username = "${var.gke_username}"
+  password = "${var.gke_password}"
 
   client_certificate     = "${base64decode(google_container_cluster.default.master_auth.0.client_certificate)}"
   client_key             = "${base64decode(google_container_cluster.default.master_auth.0.client_key)}"
@@ -15,8 +15,9 @@ resource "kubernetes_namespace" "dev" {
 }
 
 resource "google_compute_address" "default" {
-  name   = "tf-gke-k8s-lb"
-  region = " ${var.gcp_region}"
+  name    = "tf-gke-k8s-lb"
+  region  = " ${var.gcp_region}"
+  project = "${var.project}"
 }
 
 // Ingress definition

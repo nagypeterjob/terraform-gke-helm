@@ -1,13 +1,17 @@
-variable "master_username" {}
+variable "gke_username" {}
 
-variable "master_password" {}
+variable "gke_password" {}
+
+variable "project" {
+  default = "np-gke"
+}
 
 variable "gcp_region" {
-  default = "us-east1"
+  default = "us-west1"
 }
 
 variable "gcp_zone" {
-  default = "us-east1-b"
+  default = "us-west1-b"
 }
 
 variable "cluster_name" {

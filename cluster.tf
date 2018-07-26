@@ -1,6 +1,5 @@
 data "google_container_engine_versions" "default" {
-  zone    = "${var.gcp_zone}"
-  project = "np-gke"
+  zone = "${var.gcp_zone}"
 }
 
 resource "google_container_cluster" "default" {
@@ -12,7 +11,7 @@ resource "google_container_cluster" "default" {
   subnetwork         = "${google_compute_subnetwork.default.name}"
 
   master_auth {
-    username = "${var.master_username}"
-    password = "${var.master_password}"
+    username = "${var.gke_username}"
+    password = "${var.gke_password}"
   }
 }
