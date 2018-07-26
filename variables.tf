@@ -1,3 +1,6 @@
+# Declare variables used by modules
+# Adds default values to missing or empty tfvars
+
 variable "gke_username" {}
 
 variable "gke_password" {}

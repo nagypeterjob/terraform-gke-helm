@@ -1,0 +1,21 @@
+# Declare environment values
+
+gke_username = ""
+
+gke_password = ""
+
+gcp_region = "us-west1"
+
+gcp_zone = "us-west1-b"
+
+cluster_name = "gke_demo"
+
+initial_node_count = 1
+
+node_machine_type = "n1-standard-1"
+
+node_disk_size = 20
+
+env = "dev"
+
+network_name = "tf-gke-k8s"

@@ -15,12 +15,11 @@ resource "kubernetes_namespace" "dev" {
 }
 
 resource "google_compute_address" "default" {
-  name    = "tf-gke-k8s-lb"
-  region  = " ${var.gcp_region}"
-  project = "${var.project}"
+  name = "tf-gke-k8s-lb"
 }
 
-// Ingress definition
+// Ingress service definition - so k8s is accessible from the outside on TCP 80
+
 resource "kubernetes_service" "nginx" {
   metadata {
     namespace = "${kubernetes_namespace.dev.metadata.0.name}"
