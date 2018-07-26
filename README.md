@@ -1,5 +1,5 @@
 # terraform-gke-helm
-Terraform configuration for spinning up a GKE cluster with helm 
+Terraform configuration for spinning up a Google kubernetes engine cluster with helm 
 
 1. Fill the *terraform.tfvars* with your own variables
 
